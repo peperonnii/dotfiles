@@ -1,0 +1,149 @@
+[
+  {
+    "height": 45,
+    "layer": "top",
+    "margin-bottom": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+    "margin-top": 6,
+    "width": 1900,
+    "output": "DP-1",
+    "position": "top",
+
+    "image": {
+      "exec":"~/.config/waybar/scripts/album_art.sh",
+      "size": 35,
+      "interval": 10,  
+    },
+    "clock": {
+      "format": " {:%D  %T}",
+      "tooltip": "true",
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+      "interval": 1
+    },
+    "custom/launcher": {
+      "format": "",
+      "tooltip": "false"
+    },
+    "custom/playerlabel": {
+      "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+      "format": "<span>󰎈 {} 󰎈</span>",
+      "max-length": 40,
+      "on-click": "",
+      "return-type": "json"
+    },
+    "cava": {
+        "cava_config": "/home/joebiden/.config/cava/config",
+        "framerate": 120,
+        "autosens": 1,
+        "bars": 20,
+        "lower_cutoff_freq": 50,
+        "higher_cutoff_freq": 20000,
+        "method": "pipewire",
+        "source": "default",
+        "stereo": true,
+        "reverse": false,
+        "bar_delimiter": 0,
+        "monstercat": false,
+        "waves": false,
+        "noise_reduction": 0.7,
+        "input_delay": 1,
+        "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+        "actions": {
+                   "on-click-right": "mode"
+        }
+    },
+    "pulseaudio": {
+      "format": "{icon} {volume}%",
+      "format-icons": {
+        "default": [
+          "󰕿",
+          "󰖀",
+          "󰕾"
+        ]
+      },
+      "format-muted": "󰝟",
+      "on-click": "alacritty -e pulsemixer",
+      "scroll-step": 5
+    },
+    "pulseaudio/slider": {
+      "min": 0,
+      "max": 100,
+      "orientation": "horizontal"
+    },
+    "tray": {
+      "icon-size": 13,
+      "spacing": 6
+    },
+    "hyprland/workspaces": {
+      "persistent-workspaces": {
+        "*": 5,
+        "DP-1": [2, 3 ], // workspaces 2 and 3 shown on DP-1
+      },
+      "format": "{name}",
+      "format-icons": {
+        "active": "",
+        "default": "",
+        "sort-by-number": true,
+        "urgent": ""
+      },
+      "on-click": "activate",
+      "on-scroll-down": "hyprctl dispatch workspace e+1",
+      "on-scroll-up": "hyprctl dispatch workspace e-1"
+    },
+    "hyprland/window": {
+      "format": "󰍺 {class}",
+    },
+    "keyboard-state": {
+        "capslock": true,
+    },
+    "cpu": {
+     "interval": 1,
+     "format": " {usage}%",
+    },
+    "memory": {
+        "interval": 2,
+        "format": " {used:0.001f}G/{total:0.001f}G "
+    },
+    "temperature": {
+        "interval": 1,
+        "thermal-zone": 3,
+        "hwmon-path": "/sys/class/hwmon/hwmon1/temp2_input",
+        "critical-threshold": 65,
+        "format-critical": " {temperatureC}°C",
+        "format": "{temperatureC}°C"
+    }, 
+    "keyboard-state": {
+        "on-click": "alacritty -e pulsemixer",
+        "capslock": true,
+        "format": {
+            "capslock": "{icon}"                                                                                                                                                       
+        },
+        "format-icons": {
+            "unlocked": " ",
+            "locked": "CAPS LOCK"
+        }
+    },
+
+    "modules-center": [
+      "custom/launcher",
+      "keyboard-state",
+      "hyprland/workspaces",
+      "clock",
+      "pulseaudio",
+      "pulseaudio/slider",
+      "hyprland/window",
+      "tray",
+    ],
+    "modules-left": [
+      "custom/playerlabel",
+      "image",
+      "cava",
+    ],
+    "modules-right": [
+      "cpu",
+      "temperature",
+      "memory"
+    ],
+  }
+]

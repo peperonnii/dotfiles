@@ -1,0 +1,2 @@
+# dotfiles
+Arch Linux 🤝 Hyprland

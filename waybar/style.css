@@ -1,0 +1,194 @@
+@import url("/home/joebiden/.cache/wal/colors-waybar.css");
+* {
+    border: none;
+    font-family: JetBrains Mono Nerd Font;
+    font-size: 18px;
+}
+#window{
+    font-weight: normal;
+    font-style: normal;
+}
+#waybar {
+    background: @background;
+    opacity: 0.75;
+}
+window#waybar {
+    border-radius: 20px;
+    opacity: 0.9;
+}
+
+#custom-playerlabel {
+    background: #303030;
+    color: @color4;
+    border-radius: 16px 0px 0px 16px;
+    padding: 2px 10px;
+    margin: 5px 1px 5px 5px;
+    transition: all 0.4s ease-in-out;
+} 
+#image {
+    border-radius: 16px;
+    margin: 5px 5px;
+}
+#cava {
+    color: @color4;
+    background: @background;
+    border-radius: 0px 16px 16px 0px;
+    border: none;
+    border-color: @foreground;
+    border-width: 2px;
+    padding: 2px 10px;
+    margin: 5px 5px 5px 0px;
+    transition: all 0.4s ease-in-out;
+}
+#custom-launcher {
+    color: @color9;
+    background: @background;
+    border-radius: 12px;
+    border: solid;
+    border-color: @color3;
+    border-width: 2px;
+    font-size: 22px; 
+    font-weight: bold;
+    padding: 0px 10px 0px 7px;
+    margin: 5px 3px;
+}
+#keyboard-state  label {
+    color: @color9;
+    background: @background;
+    border-radius: 12px;
+    border: solid;
+    border-color: @color3;
+    border-width: 2px;
+    font-weight: bold;
+    padding: 0px 3px 0px 6px;
+    margin: 5px 0px 5px 1px;
+}
+#keyboard-state  label.locked {
+    background: @color9;
+    color: @foreground;
+    font-weight: bold;
+    border-radius: 16px;
+    padding: 2px 15px;
+    margin: 5px 0px;
+    transition: all 0.1s ease-in-out;
+}
+#workspaces {
+    color: @color11;
+    background: linear-gradient(60deg, @color5, @color7);
+    border-radius: 16px;
+    padding: 2px 10px;
+    margin: 5px 2px;
+}
+#workspaces button {
+    border-radius: 16px;
+    padding: 1px 5px;
+    margin: 2px 2px;
+    color: @color9;
+    background: @color9;
+    transition: all 0.3s ease-in-out;
+}
+#workspaces button.active {
+    background-color: @color2;
+    min-height: 0px;
+    color: @color3;
+    border-radius: 16px;
+    min-width: 60px;
+    background-size: 400% 400%;
+    transition: all 0.3s ease-in-out;
+}
+#workspaces button:hover {
+    background-color: @foreground;
+    color: @background;
+    border-radius: 16px;
+    min-width: 60px;
+    background-size: 400% 400%;
+}
+#clock {
+    color: @foreground;
+    background: linear-gradient(45deg, @color3, @color1, @color2);
+    font-weight: bold;
+    border-radius: 16px;
+    padding: 2px 10px;
+    margin: 5px 2px;
+}
+#pulseaudio {
+    color: @foreground;
+    background: #303030;
+    border-radius: 16px 0px 0px 16px;
+    padding: 2px 10px;
+    margin: 5px 0px 5px 3px;
+    font-size: 18px;
+}
+#pulseaudio-slider{
+    background: #303030;
+    border-radius: 0px 16px 16px 0px;
+    padding: 2px 12px 2px 4px;
+    margin: 5px 3px 5px 0px;
+}
+#pulseaudio-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    border: solid;
+}
+#pulseaudio-slider trough {
+    min-height: 7px;
+    min-width: 75px;
+    border-radius: 5px;
+    background-color: #202020;
+}
+#pulseaudio-slider highlight {
+    min-width: 7px;
+    border-radius: 5px;
+    background-color: @color2;
+}
+#window {
+    background: @background;
+    color: @foreground;
+    border-radius: 16px;
+    border: solid;
+    border-color: @color3;
+    border-width: 2px;
+    padding: 2px 10px;
+    margin: 5px 2px 5px 2px;
+    transition: all 0.4s ease-in-out;
+}
+#tray {
+    opacity: 0.75;
+    border-radius: 16px;
+    padding: 2px 10px;
+    margin: 5px 5px 5px 0px;
+    background: #202020;
+
+}
+#cpu {
+    background: @color2;
+    color: @foreground;
+    font-weight: bold;
+    border-radius: 16px 0px 0px 16px;
+    padding: 2px 0px 2px 10px;
+    margin: 5px 0px 5px 5px;
+}
+#memory {
+    background: @color2;
+    color: @foreground;
+    font-weight: bold;
+    border-radius: 0px 16px 16px 0px;
+    padding: 2px 5px 2px 0px;
+    margin: 5px 5px 5px 0px;
+}
+#temperature {
+    background: @color2;
+    color: @foreground;
+    font-weight: bold;
+    padding: 2px 10px;
+    margin: 5px 0px;
+}
+#temperature.critical {
+    background: @color2;
+    color: @foreground;
+    font-weight: bold;
+    border-radius: 0px 16px 16px 0px;
+    padding: 2px 8px;
+    margin: 5px 5px 5px 0px;
+}
