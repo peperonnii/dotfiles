@@ -11,7 +11,6 @@ cp -rL ~/.config/astro ~/dotfiles/
 cp -rL ~/.config/awesome ~/dotfiles/
 cp -rL ~/.config/cava ~/dotfiles/
 cp -rL ~/.config/discord ~/dotfiles/
-cp -rL ~/.config/copyq ~/dotfiles/
 cp -rL ~/.config/kitty ~/dotfiles/
 cp -rL ~/.config/mpv ~/dotfiles/
 cp -rL ~/.config/neofetch ~/dotfiles/

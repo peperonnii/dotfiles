@@ -12,32 +12,30 @@
 
     "image": {
       "exec":"~/.config/waybar/scripts/album_art.sh",
-      "size": 35,
-      "interval": 10,  
+      "size": 30,
+      "interval": 5,  
     },
     "clock": {
       "format": " {:%D  %T}",
-      "tooltip": "true",
-      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
       "interval": 1
     },
     "custom/launcher": {
       "format": "",
       "tooltip": "false"
     },
-    "custom/playerlabel": {
-      "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
-      "format": "<span>󰎈 {} 󰎈</span>",
-      "max-length": 40,
-      "on-click": "",
-      "return-type": "json"
+    "custom/playerctl": {
+      "exec":"~/.config/waybar/scripts/playerctl.sh",
+      "interval": 1,
+      "max-length": 30,
+      "format": "{}",
+      "return-type": "text" // Change to "text" because the script outputs plain text now
     },
     "cava": {
         "cava_config": "/home/joebiden/.config/cava/config",
         "framerate": 120,
         "autosens": 1,
-        "bars": 20,
-        "lower_cutoff_freq": 50,
+        "bars": 24,
+        "lower_cutoff_freq": 40,
         "higher_cutoff_freq": 20000,
         "method": "pipewire",
         "source": "default",
@@ -46,7 +44,7 @@
         "bar_delimiter": 0,
         "monstercat": false,
         "waves": false,
-        "noise_reduction": 0.7,
+        "noise_reduction": 0.75,
         "input_delay": 1,
         "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
         "actions": {
@@ -54,7 +52,7 @@
         }
     },
     "pulseaudio": {
-      "format": "{icon} {volume}%",
+      "format": "{icon}",
       "format-icons": {
         "default": [
           "󰕿",
@@ -63,7 +61,7 @@
         ]
       },
       "format-muted": "󰝟",
-      "on-click": "alacritty -e pulsemixer",
+      "on-click": "alacritty -e zsh -ic 'pulsemixer'",
       "scroll-step": 5
     },
     "pulseaudio/slider": {
@@ -77,8 +75,8 @@
     },
     "hyprland/workspaces": {
       "persistent-workspaces": {
-        "*": 5,
         "DP-1": [2, 3 ], // workspaces 2 and 3 shown on DP-1
+        "*": 5,
       },
       "format": "{name}",
       "format-icons": {
@@ -93,6 +91,7 @@
     },
     "hyprland/window": {
       "format": "󰍺 {class}",
+      "on-click": "alacritty -e hyprctl clients"
     },
     "keyboard-state": {
         "capslock": true,
@@ -100,18 +99,25 @@
     "cpu": {
      "interval": 1,
      "format": " {usage}%",
+     "on-click": "alacritty -e zsh -ic 'btop'",
+     "tooltip": true,
+     "tooltip-format": "btop++"
     },
-    "memory": {
-        "interval": 2,
-        "format": " {used:0.001f}G/{total:0.001f}G "
+    "custom/mem": {
+        "format": " {}",
+        "interval": 3,
+        "exec": "free | awk '/Mem:/{printf \"%dMB\\n\", $3/1024}'",
+        "tooltip": false,
+        "on-click": "alacritty --class btop -e zsh -ic 'btop' ",
     },
     "temperature": {
         "interval": 1,
         "thermal-zone": 3,
-        "hwmon-path": "/sys/class/hwmon/hwmon1/temp2_input",
+        "hwmon-path": "/sys/class/hwmon/hwmon0/temp2_input",
         "critical-threshold": 65,
         "format-critical": " {temperatureC}°C",
-        "format": "{temperatureC}°C"
+        "format": "{temperatureC}°C",
+        "on-click": "alacritty -e zsh -ic 'btop'",
     }, 
     "keyboard-state": {
         "on-click": "alacritty -e pulsemixer",
@@ -120,30 +126,30 @@
             "capslock": "{icon}"                                                                                                                                                       
         },
         "format-icons": {
-            "unlocked": " ",
-            "locked": "CAPS LOCK"
+            "unlocked": "󰌓",
+            "locked": " CAPS LOCK "
         }
     },
 
     "modules-center": [
-      "custom/launcher",
       "keyboard-state",
+      "custom/launcher",
       "hyprland/workspaces",
       "clock",
+      "cpu",
+      "temperature",
+      "custom/mem",
       "pulseaudio",
       "pulseaudio/slider",
       "hyprland/window",
       "tray",
     ],
     "modules-left": [
-      "custom/playerlabel",
       "image",
-      "cava",
+      "custom/playerctl"
     ],
     "modules-right": [
-      "cpu",
-      "temperature",
-      "memory"
+        "cava",
     ],
   }
 ]

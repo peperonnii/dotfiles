@@ -131,6 +131,6 @@ require("lazy").setup(plugins, opts)
 local function source()
   vim.cmd('source ~/.config/nvim/after/plugin/pywal.lua')
   vim.cmd('source ~/.config/nvim/after/plugin/lualine.lua')
-  vim.defer_fn(source, 5000)
+  vim.defer_fn(source, 2000)
 end
 source()

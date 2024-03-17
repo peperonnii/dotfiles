@@ -107,12 +107,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # eval "$(starship init zsh)"
-source ~/github/powerlevel10k/powerlevel10k.zsh-theme
 
 echo " "
 neofetch
 echo " "
-wal -q -i ~/Pictures/WALLPAPERS/current/coverWallpaper.png
+wal --saturate 0.5 -q -i ~/Pictures/spotipaper/AlbumCover.png 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -132,3 +131,6 @@ alias bt=bluetoothctl
 alias m=pulsemixer
 alias kp='pkill picom'
 alias p='sudo pacman'
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+
+export PATH=$PATH:/home/joebiden/.spicetify
