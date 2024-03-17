@@ -1,9 +1,0 @@
-2024/03/16-18:42:01.196 522 Reusing MANIFEST /home/joebiden/.config/discord/Local Storage/leveldb/MANIFEST-000001
-2024/03/16-18:42:01.196 522 Recovering log #133
-2024/03/16-18:42:01.196 522 Reusing old log /home/joebiden/.config/discord/Local Storage/leveldb/000133.log 
-2024/03/16-18:45:51.954 18c0 Level-0 table #140: started
-2024/03/16-18:45:52.005 18c0 Level-0 table #140: 2962515 bytes OK
-2024/03/16-18:45:52.018 18c0 Delete type=0 #133
-2024/03/16-18:46:11.519 18c0 Level-0 table #142: started
-2024/03/16-18:46:11.533 18c0 Level-0 table #142: 78697 bytes OK
-2024/03/16-18:46:11.539 18c0 Delete type=0 #139
