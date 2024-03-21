@@ -2,6 +2,8 @@
 mkdir -p ~/dotfiles
 
 cp -rL ~/.config/hypr ~/dotfiles/
+cp -rL ~/.mozilla/firefox/7m34k4i4.default-release/chrome ~/dotfiles/
+cp -rL ~/.mozilla/firefox/7m34k4i4.default-release/user.js ~/dotfiles/
 cp -rL ~/.config/nvim ~/dotfiles/
 cp -rL ~/.config/alacritty ~/dotfiles/
 cp -rL ~/.config/awesome ~/dotfiles/
