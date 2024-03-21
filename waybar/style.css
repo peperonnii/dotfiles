@@ -68,7 +68,7 @@ window#waybar {
 }
 #workspaces {
     color: @color11;
-    background: linear-gradient(50deg, @color1, @color2);
+    background: linear-gradient(30deg, @color1, @color2);
     border-radius: 16px;
     padding: 2px 10px;
     margin: 5px 0px;
@@ -99,7 +99,7 @@ window#waybar {
 }
 #clock {
     color: @foreground;
-    background: linear-gradient(50deg, @color2, @color4);
+    background: linear-gradient(60deg, @color2, @color4);
     font-weight: bold;
     border-radius: 16px;
     padding: 2px 10px;
@@ -182,5 +182,5 @@ window#waybar {
     color: @background;
     font-weight: bold;
     padding: 2px 10px;
-    margin: 5px 5px 5px 0px;
+    margin: 5px 0px 5px 0px;
 }

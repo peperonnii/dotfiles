@@ -10,6 +10,8 @@ fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export PATH="$PATH:/home/joebiden/.cargo/bin"
+export PATH="$HOME/.local/bin:$PATH"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -134,3 +136,12 @@ alias p='sudo pacman'
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 export PATH=$PATH:/home/joebiden/.spicetify
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
