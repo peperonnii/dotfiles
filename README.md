@@ -1,4 +1,4 @@
-# Arch Linux 🤝 Hyprland
+# Spotify 🤝 Arch Linux 🤝 Hyprland
 
 ![image](https://github.com/BigLadDylan/dotfiles/assets/76881322/7e29bac9-d80e-4934-8610-6e5576dfd680)
 
