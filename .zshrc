@@ -125,18 +125,20 @@ function add-sudo() {
 }
 zle -N add-sudo
 bindkey '^S' add-sudo
-
 export XDG_CURRENT_DESKTOP=Hyprland
 
-alias vim=nvim
+alias v=nvim
 alias bt=bluetoothctl
 alias m=pulsemixer
 alias kp='pkill picom'
-alias p='sudo pacman'
+alias pr='sudo pacman -R'
+alias ps='sudo pacman -S'
+alias pu='sudo pacman -Syu'
+alias ys='sudo pacman -S'
+alias yr='sudo pacman -R'
+alias yu='sudo pacman -Syu'
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-
 export PATH=$PATH:/home/joebiden/.spicetify
-
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
 	yazi "$@" --cwd-file="$tmp"

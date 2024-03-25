@@ -34,7 +34,7 @@
         "cava_config": "/home/joebiden/.config/cava/config",
         "framerate": 120,
         "autosens": 1,
-        "bars": 24,
+        "bars": 22,
         "lower_cutoff_freq": 40,
         "higher_cutoff_freq": 20000,
         "method": "pipewire",
@@ -90,8 +90,9 @@
       "on-scroll-up": "hyprctl dispatch workspace e-1"
     },
     "hyprland/window": {
-      "format": "󰍺 {class}",
-      "on-click": "alacritty -e hyprctl clients"
+      "format": "󰍺 {title}",
+      "on-click": "alacritty -e 'hyprctl clients'",
+      "max-length": 22,
     },
     "keyboard-state": {
         "capslock": true,
@@ -131,6 +132,20 @@
         }
     },
 
+    "custom/backbutton": {
+      "on-click": "playerctl previous",
+      "format": "󰙣",
+    },
+    "custom/playbutton": {
+      "on-click": "playerctl play-pause",
+      "format": "",
+    },
+    "custom/nextbutton": {
+      "on-click": "playerctl next",
+      "format": "󰙡 ",
+    },
+
+
     "modules-center": [
       "keyboard-state",
       "custom/launcher",
@@ -149,7 +164,10 @@
       "custom/playerctl"
     ],
     "modules-right": [
-        "cava",
+      "cava",
+      "custom/backbutton",
+      "custom/playbutton",
+      "custom/nextbutton",
     ],
   }
 ]

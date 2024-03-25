@@ -164,6 +164,7 @@ icon_error = ""
 # : }}}
 
 
+
 # : File-specific styles {{{
 
 [filetype]
@@ -194,7 +195,7 @@ rules = [
 
 	# Fallback
 	# { name = "*", fg = "white" },
-	{ name = "*/", fg = "green" }
+	{ name = "*/", fg = "blue" }
 ]
 
 [icon]

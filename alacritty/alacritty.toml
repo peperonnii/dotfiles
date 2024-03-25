@@ -46,10 +46,6 @@ style = "italic"
 family = "jetbrains mono nerd font"
 style = "regular"
 
-[window.class]
-general = "alacritty"
-instance = "alacritty"
-
 [window]
 padding = {x = 20, y= 20}
 

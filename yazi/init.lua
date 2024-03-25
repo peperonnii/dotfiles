@@ -43,3 +43,16 @@ function Header:render(area)
         ui.Paragraph(area, { right }):align(ui.Paragraph.RIGHT),
     }
 end
+
+-- ~/.config/yazi/init.lua
+require("bookmarks"):setup({
+	notify = {
+		enable = true,
+		timeout = 1,
+		message = {
+			new = "New bookmark '<key>' -> '<folder>'",
+			delete = "Deleted bookmark in '<key>'",
+			delete_all = "Deleted all bookmarks",
+		},
+	},
+})

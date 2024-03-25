@@ -79,7 +79,6 @@ keymap = [
 	{ on = [ "." ],         run = "hidden toggle",              desc = "Toggle the visibility of hidden files" },
 	{ on = [ "s" ],         run = "search fd",                  desc = "Search files by name using fd" },
 	{ on = [ "S" ],         run = "search rg",                  desc = "Search files by content using ripgrep" },
-	{ on = [ "<C-s>" ],     run = "search none",                desc = "Cancel the ongoing search" },
 	{ on = [ "z" ],         run = "jump zoxide",                desc = "Jump to a directory using zoxide" },
 	{ on = [ "Z" ],         run = "jump fzf",                   desc = "Jump to a directory, or reveal a file using fzf" },
 
@@ -141,11 +140,14 @@ keymap = [
 	{ on = [ "w" ], run = "tasks_show", desc = "Show the tasks manager" },
 
 	# Goto
-	{ on = [ "g", "h" ],       run = "cd ~",             desc = "Go to the home directory" },
-	{ on = [ "g", "c" ],       run = "cd ~/.config",     desc = "Go to the config directory" },
-	{ on = [ "g", "d" ],       run = "cd ~/Downloads",   desc = "Go to the downloads directory" },
-	{ on = [ "g", "t" ],       run = "cd /tmp",          desc = "Go to the temporary directory" },
-	{ on = [ "g", "<Space>" ], run = "cd --interactive", desc = "Go to a directory interactively" },
+	{ on = [ "b", "h" ],       run = "cd ~",             desc = "home" },
+	{ on = [ "b", "c" ],       run = "cd ~/.config",     desc = "config" },
+	{ on = [ "b", "l" ],       run = "cd ~/.local",     desc = "local" },
+	{ on = [ "b", "d" ],       run = "cd ~/Downloads",   desc = "downloads" },
+	{ on = [ "b", "D" ],       run = "cd ~/Documents",   desc = "documents" },
+    { on = [ "b", "p" ],       run = "cd ~/Pictures",   desc = "pictures" },
+	{ on = [ "b", "1" ],       run = "cd /mnt/sdb1/",          desc = "sdb1" },
+	{ on = [ "b", "<Space>" ], run = "cd --interactive", desc = "SEARCH" },
 
 	# Help
 	{ on = [ "~" ], run = "help", desc = "Open help" },
@@ -301,26 +303,6 @@ keymap = [
 	# Filtering
 	{ on = [ "/" ], run = "filter", desc = "Apply a filter for the help items" },
 ]
-
-[[manager.prepend_keymap]]
-on = [ "m" ]
-run = "plugin bookmarks --args=save"
-desc = "Save current position as a bookmark"
-
-[[manager.prepend_keymap]]
-on = [ "'" ]
-run = "plugin bookmarks --args=jump"
-desc = "Jump to a bookmark"
-
-[[manager.prepend_keymap]]
-on = [ "b", "d" ]
-run = "plugin bookmarks --args=delete"
-desc = "Delete a bookmark"
-
-[[manager.prepend_keymap]]
-on = [ "b", "D" ]
-run = "plugin bookmarks --args=delete_all"
-desc = "Delete all bookmarks"
 
 [[manager.prepend_keymap]]
 on   = [ "<C-s>" ]
