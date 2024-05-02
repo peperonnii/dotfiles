@@ -1,6 +1,6 @@
 #!/bin/bash
 
-metadata=$(playerctl -a metadata --format '{{playerName}}::{{artist}}::{{title}}' 2>/dev/null)
+metadata=$(playerctl -a metadata --format '{{playerName}}::{{artist}}' 2>/dev/null)
 # Check if playerctl returned metadata
 if [ -z "$metadata" ]; then
     echo "󰇘"

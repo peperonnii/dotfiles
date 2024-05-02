@@ -14,6 +14,20 @@ require('bufferline').setup {
             text_align = "right",
         }},
     },
+    highlights = {
+        fill = {
+        },
+        background = {
+            fg = '#ffffff',
+            bg = '#050505'
+        },
+        buffer_selected = {
+            fg = '#ffffff',
+            bold = true,
+        },
+    }
+  -- Additional styling for other states...
 }
--- Set the background color of the buffer line
 
+-- -- Set the background color of the buffer line
+--

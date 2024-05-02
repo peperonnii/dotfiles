@@ -1,3 +1,11 @@
+local function spotify_current_song()
+    local handle = io.popen("playerctl -p spotify metadata --format '{{ title }} - {{ artist }}'")
+    local result = handle:read("*a")
+    handle:close()
+    result = result:gsub("^%s*(.-)%s*$", "%1")  -- Trim whitespace from the result
+    return ' ' .. result  -- Prepend the Spotify icon
+end
+
 require('lualine').setup {
     options = {
         icons_enabled = true,
@@ -10,7 +18,7 @@ require('lualine').setup {
         },
         ignore_focus = {},
         always_divide_middle = true,
-        globalstatus = false,
+        globalstatus = true,
         refresh = {
             statusline = 1000,
             tabline = 1000,
@@ -19,31 +27,42 @@ require('lualine').setup {
     },
     sections = {
         lualine_a = {
-            { 'mode', separator = { left = '', right = '' }, right_padding = 2 },
+            { 'mode', separator = { left = '', right = '' }},
         },
         lualine_b = {'branch', 'diff'},
         lualine_c = {
             {
                 -- Custom component to display full path
                 function()
-                    return vim.fn.expand("%:p")
+                    local path = vim.fn.expand("%:p")  -- Get the full path of the current file
+                    local home = os.getenv("HOME")     -- Get the user's home directory path
+                    if path:sub(1, #home) == home then -- Check if the path starts with the home directory
+                        path = '~' .. path:sub(#home + 1) -- Replace the home directory with '~'
+                    end
+                    return path
                 end,
-                icon = '', -- Optional: add an icon to the component
+                icon = ' ', -- Optional: add an icon to the component
+                -- function()
+                --     return vim.fn.expand("%:p")
+                -- end,
+                -- icon = '', -- Optional: add an icon to the component
             }
         },
-        lualine_x = {'filetype'},
-        lualine_y = {'diagnostics', 'progress'},
+        lualine_x = {spotify_current_song, 'filetype'},
+        lualine_y = {'diagnostics'},
         lualine_z = {
-            {'location', separator = { left = '', right = ''}, left_padding = 2}
+            {'progress'},
+            {
+                'location',
+                separator = { left = '', right = ''}, padding = 0,
+            }
         }
     },
     inactive_sections = {
-        lualine_a = {},
+        lualine_a = {'filename'},
         lualine_b = {},
-        lualine_c = {'filename'},
-        lualine_x = { 
-            {'location', separator = { left = '', right = ''}, left_padding = 2}
-        },
+        lualine_c = {},
+        lualine_x = {},
         lualine_y = {},
         lualine_z = {}
     },

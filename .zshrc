@@ -110,9 +110,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # eval "$(starship init zsh)"
 
-echo " "
 neofetch
-echo " "
 wal --saturate 0.5 -q -i ~/Pictures/spotipaper/AlbumCover.png 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

@@ -9,24 +9,40 @@
     font-style: normal;
 }
 #waybar {
-    background: @background;
-    opacity: 0.75;
+    background: @none;
 }
 window#waybar {
     border-radius: 20px;
     opacity: 0.75;
 }
+/* .modules-left{ */
+/*     background: @background; */
+/*     border-radius: 24px; */
+/*     padding: 0px 6px; */
+/* } */
+.modules-center{
+    background: @background;
+    border-radius: 24px;
+    padding: 0px 5px;
+    margin: 0px 5px;
+}
+/* .modules-right{ */
+/*     background: @background; */
+/*     border-radius: 24px; */
+/*     padding: 0px 0px 0px 2px; */
+/* } */
+
 #custom-playerctl {
     color: @color4;
-    margin: 5px 2px 5px 8px;
+    margin: 5px 8px 5px 3px;
     transition: all 0.4s ease-in-out;
 } 
 #image {
     margin: 5px 5px 5px 10px;
 }
 #cava {
+    opacity: 1;
     color: @color4;
-    background: @background;
     border-radius: 0px 16px 16px 0px;
     border: none;
     border-color: @foreground;
@@ -36,8 +52,8 @@ window#waybar {
     transition: all 0.4s ease-in-out;
 }
 #custom-launcher {
+    opacity: 1;
     color: @color3;
-    background: @background;
     border-radius: 12px;
     border: solid;
     border-color: @color1;
@@ -47,18 +63,19 @@ window#waybar {
     padding: 0px 10px 0px 7px;
     margin: 5px 3px;
 }
-#keyboard-state  label {
+#keyboard-state label {
+    opacity: 1;
     color: @color1;
-    background: @background;
     border-radius: 12px;
     font-weight: bold;
     font-size: 23px;
     padding: 0px 6px 0px 6px;
     margin: 0px 3px 0px 2px;
 }
-#keyboard-state  label.locked {
+#keyboard-state label.locked {
     background: @foreground;
     color: @background;
+    opacity: 1;
     font-weight: bold;
     font-size: 20px;
     border-radius: 16px;
@@ -68,6 +85,7 @@ window#waybar {
 }
 #workspaces {
     color: @color11;
+    opacity: 1;
     background: linear-gradient(30deg, @color1, @color2);
     border-radius: 16px;
     padding: 2px 10px;
@@ -82,12 +100,12 @@ window#waybar {
     transition: all 0.3s ease-in-out;
 }
 #workspaces button.active {
-    background-color: @color3;
+    background: @color3;
     min-height: 0px;
-    color: @background;
+    color: transparent;
     border-radius: 16px;
-    min-width: 60px;
-    background-size: 400% 400%;
+    min-width: 50px;
+    background-size: 300% 300%;
     transition: all 0.3s ease-in-out;
 }
 #workspaces button:hover {
@@ -98,6 +116,7 @@ window#waybar {
     background-size: 400% 400%;
 }
 #clock {
+    opacity: 1;
     color: @foreground;
     background: linear-gradient(60deg, @color2, @color4);
     font-weight: bold;
@@ -128,7 +147,7 @@ window#waybar {
     opacity: 0;
 }
 #pulseaudio-slider trough {
-    min-height: 7px;
+    min-height: 9px;
     min-width: 75px;
     color: @color3;
     border-radius: 5px;
@@ -149,13 +168,12 @@ window#waybar {
     transition: all 0.4s ease-in-out;
 }
 #tray {
-    opacity: 0.05;
+    opacity: 0.15;
     border-radius: 16px;
-    padding: 2px 10px;
-    margin: 5px 5px 5px 0px;
+    padding: 2px 2px;
+    margin: 5px 0px 5px 0px;
 }
 #custom-playbutton, #custom-nextbutton, #custom-backbutton {
-    margin: 5px 6px;
     color: @color3;
     font-size: 22px;
 }

@@ -31,19 +31,19 @@ foreground = "0xfafafa"
 size = 13
 
 [font.bold]
-family = "jetbrains mono nerd font"
+family = "JetBrains Mono Nerd Font"
 style = "bold"
 
 [font.bold_italic]
-family = "jetbrains mono nerd font"
+family = "JetBrains Mono Nerd Font"
 style = "bolditalic"
 
 [font.italic]
-family = "jetbrains mono nerd font"
+family = "JetBrains Mono Nerd Font"
 style = "italic"
 
 [font.normal]
-family = "jetbrains mono nerd font"
+family = "JetBrains Mono Nerd Font"
 style = "regular"
 
 [window]

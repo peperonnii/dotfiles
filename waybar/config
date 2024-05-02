@@ -6,14 +6,14 @@
     "margin-left": 0,
     "margin-right": 0,
     "margin-top": 6,
-    "width": 1900,
+    "width": 1850,
     "output": "DP-1",
     "position": "top",
-
+    "reload_style_on_change": true,
     "image": {
-      "exec":"~/.config/waybar/scripts/album_art.sh",
+      "exec": "~/.config/waybar/scripts/album_art.sh",
       "size": 30,
-      "interval": 5,  
+      "interval": 5
     },
     "clock": {
       "format": " {:%D  %T}",
@@ -21,35 +21,35 @@
     },
     "custom/launcher": {
       "format": "",
-      "tooltip": "false"
+      "tooltip": false
     },
     "custom/playerctl": {
-      "exec":"~/.config/waybar/scripts/playerctl.sh",
+      "exec": "~/.config/waybar/scripts/playerctl.sh",
       "interval": 1,
       "max-length": 30,
       "format": "{}",
-      "return-type": "text" // Change to "text" because the script outputs plain text now
+      "return-type": "text"
     },
     "cava": {
-        "cava_config": "/home/joebiden/.config/cava/config",
-        "framerate": 120,
-        "autosens": 1,
-        "bars": 22,
-        "lower_cutoff_freq": 40,
-        "higher_cutoff_freq": 20000,
-        "method": "pipewire",
-        "source": "default",
-        "stereo": true,
-        "reverse": false,
-        "bar_delimiter": 0,
-        "monstercat": false,
-        "waves": false,
-        "noise_reduction": 0.75,
-        "input_delay": 1,
-        "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
-        "actions": {
-                   "on-click-right": "mode"
-        }
+      "cava_config": "/home/joebiden/.config/cava/config",
+      "framerate": 120,
+      "autosens": 1,
+      "bars": 26,
+      "lower_cutoff_freq": 40,
+      "higher_cutoff_freq": 20000,
+      "method": "pipewire",
+      "source": "default",
+      "stereo": true,
+      "reverse": false,
+      "bar_delimiter": 0,
+      "monstercat": false,
+      "waves": false,
+      "noise_reduction": 0.75,
+      "input_delay": 1,
+      "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+      "actions": {
+        "on-click-right": "mode"
+      }
     },
     "pulseaudio": {
       "format": "{icon}",
@@ -75,8 +75,8 @@
     },
     "hyprland/workspaces": {
       "persistent-workspaces": {
-        "DP-1": [2, 3 ], // workspaces 2 and 3 shown on DP-1
-        "*": 5,
+        "DP-1": [2, 3],
+        "*": 5
       },
       "format": "{name}",
       "format-icons": {
@@ -92,34 +92,8 @@
     "hyprland/window": {
       "format": "󰍺 {title}",
       "on-click": "alacritty -e 'hyprctl clients'",
-      "max-length": 22,
+      "max-length": 22
     },
-    "keyboard-state": {
-        "capslock": true,
-    },
-    "cpu": {
-     "interval": 1,
-     "format": " {usage}%",
-     "on-click": "alacritty -e zsh -ic 'btop'",
-     "tooltip": true,
-     "tooltip-format": "btop++"
-    },
-    "custom/mem": {
-        "format": " {}",
-        "interval": 3,
-        "exec": "free | awk '/Mem:/{printf \"%dMB\\n\", $3/1024}'",
-        "tooltip": false,
-        "on-click": "alacritty --class btop -e zsh -ic 'btop' ",
-    },
-    "temperature": {
-        "interval": 1,
-        "thermal-zone": 3,
-        "hwmon-path": "/sys/class/hwmon/hwmon0/temp2_input",
-        "critical-threshold": 65,
-        "format-critical": " {temperatureC}°C",
-        "format": "{temperatureC}°C",
-        "on-click": "alacritty -e zsh -ic 'btop'",
-    }, 
     "keyboard-state": {
         "on-click": "alacritty -e pulsemixer",
         "capslock": true,
@@ -132,21 +106,44 @@
         }
     },
 
+    "cpu": {
+      "interval": 1,
+      "format": " {usage}%",
+      "on-click": "alacritty -e zsh -ic 'btop'",
+      "tooltip": true,
+      "tooltip-format": "btop++"
+    },
+    "custom/mem": {
+      "format": " {}",
+      "interval": 3,
+      "exec": "free | awk '/Mem:/{printf \"%dMB\\n\", $3/1024}'",
+      "tooltip": false,
+      "on-click": "alacritty --class btop -e zsh -ic 'btop'"
+    },
+    "temperature": {
+      "interval": 1,
+      "thermal-zone": 3,
+      "hwmon-path": "/sys/class/hwmon/hwmon0/temp2_input",
+      "critical-threshold": 65,
+      "format-critical": "{temperatureC}°C  ",
+      "format": "{temperatureC}°C",
+      "on-click": "alacritty -e zsh -ic 'btop'"
+    },
     "custom/backbutton": {
       "on-click": "playerctl previous",
-      "format": "󰙣",
+      "format": "󰙣"
     },
     "custom/playbutton": {
       "on-click": "playerctl play-pause",
-      "format": "",
+      "format": ""
     },
     "custom/nextbutton": {
       "on-click": "playerctl next",
-      "format": "󰙡 ",
+      "format": "󰙡"
     },
-
-
     "modules-center": [
+      "image",
+      "custom/playerctl",
       "keyboard-state",
       "custom/launcher",
       "hyprland/workspaces",
@@ -156,18 +153,9 @@
       "custom/mem",
       "pulseaudio",
       "pulseaudio/slider",
-      "hyprland/window",
-      "tray",
-    ],
-    "modules-left": [
-      "image",
-      "custom/playerctl"
-    ],
-    "modules-right": [
       "cava",
-      "custom/backbutton",
-      "custom/playbutton",
-      "custom/nextbutton",
+      "tray"
     ],
   }
 ]
+

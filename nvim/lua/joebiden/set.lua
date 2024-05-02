@@ -1,5 +1,6 @@
 vim.opt.fillchars = { eob = " " }
 
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.o.number = true
@@ -37,5 +38,11 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 
+vim.cmd[[
+  augroup TerminalSettings
+    autocmd!
+    autocmd TermOpen * setlocal nonumber
+  augroup END
+]]
 
 
