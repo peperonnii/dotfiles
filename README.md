@@ -9,7 +9,7 @@ Keyboard-centered system configuration, designed for minimal distractions and a 
 ### Obsidian 
 ![image](https://github.com/user-attachments/assets/99f8ee31-9718-493f-8d20-a8785fb87970)
 ### Terminal productivity
-![image](https://github.com/user-attachments/assets/47716558-f65b-4c52-9a26-93ccdc3dc4d3)
+![image](https://github.com/user-attachments/assets/bdce1f93-e34d-4e8b-a5a8-6e8546f5c180)
 ### Anki
 ![image](https://github.com/user-attachments/assets/67b10337-6089-4b7d-9297-2b3a5db8f9b6)
 ### Spotify
