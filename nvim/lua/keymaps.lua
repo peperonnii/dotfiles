@@ -8,22 +8,21 @@ map('n', '<Leader>p', '"+p', opts) -- Paste from clipboard in Insert Mode with C
 map('n', 'J', '5j', opts)
 map('n', 'K', '5k', opts)
 
-map('n', '<leader>i', ':Lazy<CR>', opts)
+map('n', '<A-i>', ':Lazy<CR>', opts)
+map('n', '<A-I>', ':Mason<CR>', opts)
 
 map('i', '<C-CR>', '<C-o>A', opts)
 
-map('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-map('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-map('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-map('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+map('n', '<A-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+map('n', '<A-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+map('n', '<A-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+map('n', '<A-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 --buffer navigation
 map('n', '<C-s>', ':w<CR>', opts) -- Save the current buffer with Ctrl+s in Normal Mode
 map('n', '<A-w>', ':bd<CR>', opts) -- Close the current buffer with Ctrl+w in Normal Mode
-map('n', '<Leader>a', 'ggVG', opts)
-map('n', '<A-h>', ':bp<CR>', opts)
-map('n', '<A-l>', ':bn<CR>', opts)
-map('n', '<A-j>', ':bprev<CR>', opts) -- Ctrl+j for down
-map('n', '<A-k>', ':bnext<CR>', opts) -- Ctrl+k for up
+map('n', '<C-a>', 'ggVG', opts)
+map('n', '<A-p>', ':bprev<CR>', opts) -- Ctrl+j for down
+map('n', '<A-n>', ':bnext<CR>', opts) -- Ctrl+k for up
 
 map('n', '<Leader>5', ':vsp<CR>', opts)
 map('n', "<Leader>'", ':sp<CR>', opts)

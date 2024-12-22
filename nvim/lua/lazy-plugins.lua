@@ -36,8 +36,9 @@ require('lazy').setup({
   require 'plugins.debug',
   require 'plugins.conform',
   require 'plugins.lint',
+  require 'plugins.flutter',
+  require 'plugins.vimtex',
 }, {
-  ui = {
-    icons = vim.g.have_nerd_font and {} or {},
-  },
+  ui = {},
+  icons = vim.g.have_nerd_font and {} or {},
 })
