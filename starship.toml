@@ -1,0 +1,161 @@
+format = """
+[╭](fg:foreground)\
+$os\
+$directory\
+$hostname\
+$fill\
+$nodejs\
+$dotnet\
+$python\
+$java\
+$c\
+$git_branch\
+$git_commit\
+$cmd_duration\
+$line_break\
+$character\
+"""
+
+palette = 'flocuss'
+add_newline = true
+
+[palettes.flocuss]
+foreground = '#858585'
+background = '#121212'
+current_line = '#cccccc'
+primary = '#121212'
+box = '#121212'
+blue	= '#74C7EC'
+cyan = '#94E2D5'
+green	= '#A6E2A0'
+orange = '#FAB387'
+pink = '#EBA0AC'
+purple = '#CBA6F7'
+red	= '#F38BA8'
+yellow = '#F1FA8C'
+
+[os]
+format = '(fg:foreground)[](fg:green)[$symbol ](fg:primary bg:green)[](fg:green)[  ](fg:#808080)'
+disabled = false
+
+[os.symbols]
+Alpine = ''
+Amazon = ''
+Android = ''
+Arch = ''
+CentOS = ''
+Debian = ''
+EndeavourOS = ''
+Fedora = ''
+FreeBSD = ''
+Garuda = ''
+Gentoo = ''
+Linux = ''
+Macos = ''
+Manjaro = ''
+Mariner = ''
+Mint = ''
+NetBSD = ''
+NixOS = ''
+OpenBSD = ''
+OpenCloudOS = ''
+openEuler = ''
+openSUSE = ''
+OracleLinux = '⊂⊃'
+Pop = ''
+Raspbian = ''
+Redhat = ''
+RedHatEnterprise = ''
+Solus = ''
+SUSE = ''
+Ubuntu = ''
+Unknown = ''
+Windows = ''
+
+
+[directory]
+home_symbol = " "
+read_only = "  "
+style = "fg:current_line bg:primary"
+truncate_to_repo = false
+truncation_length = 6
+truncation_symbol = '../'
+# format = '[（](#606061)[$path]($style)[）](#606060)'
+format = '[﹝](#505050)[$path]($style)[﹞](#505050)'
+
+
+[directory.substitutions]
+# ".config" = " "
+
+# [directory]
+# format = '[  ](fg:current_line)[$read_only$truncation_symbol$path](fg:current_line bg:box)[](fg:box)'
+# home_symbol = " "
+# truncation_symbol = ' '
+# truncation_length = 4
+# read_only = ' '
+# read_only_style = ''
+
+[git_branch]
+format = '[ $symbol](fg:purple bg:primary)[ $branch](fg:foreground bg:box)'
+symbol = ''
+
+[git_commit]
+commit_hash_length = 4
+tag_symbol = " "
+
+[nodejs]
+format = '(fg:current_line)(fg:green)[ $symbol](fg:green bg:primary)(fg:green bg:box)[ $version](fg:foreground bg:box)'
+symbol = '󰎙'
+
+[hostname]
+ssh_only = true
+format =  "[  ](fg:orange bg:primary)[$hostname](fg:foreground)"
+trim_at = ".companyname.com"
+disabled = false
+
+# [dotnet]
+# format = '[](fg:current_line)[](fg:purple)[ $symbol](fg:purple bg:primary)[](fg:purple bg:box)[ $tfm](fg:foreground bg:box)[](fg:box)'
+# symbol = ''
+
+[python]
+format = '(fg:current_line)[$symbol](fg:blue bg:primary)[ $version](fg:foreground bg:box)[](fg:box)'
+symbol = ''
+
+# [java]
+# format = '[ $symbol](fg:primary bg:red)[ $version](fg:foreground bg:box)[](fg:box)'
+# symbol = ''
+
+[c]
+format = '[ $symbol](fg:primary bg:blue)[ $version](fg:foreground bg:box)'
+symbol = ''
+
+
+[fill]
+symbol = ' '
+style = 'fg:current_line'
+
+[cmd_duration]
+min_time = 500
+format = '[  ](fg:yellow bg:primary)[$duration](fg:foreground bg:box)'
+
+[shell]
+format = '[─](fg:current_line)[](fg:blue)[ ](fg:primary bg:blue)[](fg:blue bg:box)[ $indicator](fg:foreground bg:box)[](fg:box)'
+unknown_indicator = 'shell'
+powershell_indicator = 'powershell'
+fish_indicator = 'fish'
+disabled = false
+
+[time]
+format = '[─](fg:current_line)[](fg:purple)[󰦖 ](fg:primary bg:purple)[](fg:purple bg:box)[ $time](fg:foreground bg:box)[](fg:box)'
+time_format = '%H:%M'
+disabled = false
+
+[username]
+format = '[](fg:current_line)[](fg:yellow)[ ](fg:primary bg:yellow)[](fg:yellow bg:box)[ $user](fg:foreground bg:box)[](fg:box) '
+show_always = true
+
+[character]
+format = """
+[╰$symbol](fg:foreground) """
+success_symbol = '[ ](fg:#777777)'
+error_symbol = '[ ](fg:red)'
