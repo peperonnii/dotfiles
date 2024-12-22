@@ -4,6 +4,7 @@
 --  For more options, you can see `:help option-list`
 
 -- Make line numbers default
+--
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
@@ -47,6 +48,7 @@ vim.opt.timeoutlen = 300
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
+vim.opt.tabstop = 2
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`

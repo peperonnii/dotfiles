@@ -48,10 +48,10 @@ return {
       -- dashboard.section.header.opts.hl = "CustomHeaderColor"
       -- Set menu
       dashboard.section.buttons.val = {
-        dashboard.button('<Leader> oh', '  >>> HYPRLAND CONFIG', ':cd ~/.config/hypr <CR>:e .<CR>'),
-        dashboard.button('<Leader> on', '  >>> NEOVIM CONFIG', ':e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR>'),
-        dashboard.button('<Leader> ol', '󰅩  >>> LEETCODE', ':Leet<CR>'),
-        dashboard.button('<Leader> or', '  >>> RECENT FILES', ':Telescope oldfiles<CR>'),
+        -- dashboard.button('<Leader> oh', '  >>> HYPRLAND CONFIG', ':cd ~/.config/hypr <CR>:e .<CR>'),
+        -- dashboard.button('<Leader> on', '  >>> NEOVIM CONFIG', ':e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR>'),
+        -- dashboard.button('<Leader> ol', '󰅩  >>> LEETCODE', ':Leet<CR>'),
+        -- dashboard.button('<Leader> or', '  >>> RECENT FILES', ':Telescope oldfiles<CR>'),
       }
 
       -- Send config to alpha

@@ -43,7 +43,7 @@ return {
       local function lsp()
         local clients = vim.lsp.get_active_clients { bufnr = 0 }
         if next(clients) == nil then
-          return '󰣖 󰇘'
+          return ''
         end
         local server_names = {}
         for _, client in ipairs(clients) do
@@ -90,8 +90,7 @@ return {
 
         sections = {
           lualine_a = {
-            { 'mode', icon = '' },
-            { 'branch' },
+            { 'mode', icon = '', separator = { left = '', right = '' } },
           },
           lualine_b = {
             { 'filetype', icon_only = true, separator = '', padding = { right = 0, left = 1 } },
@@ -101,9 +100,9 @@ return {
               separator = '',
               padding = { right = 1, left = 0 },
               symbols = {
-                modified = '', -- Text to show when the file is modified.
-                readonly = '', -- Text to show when the file is non-modifiable or readonly.
-                unnamed = '󰇘', -- Text to show for unnamed buffers.
+                modified = '+', -- Text to show when the file is modified.
+                readonly = 'x', -- Text to show when the file is non-modifiable or readonly.
+                unnamed = '', -- Text to show for unnamed buffers.
                 newfile = '󰎔', -- Text to show for newly created file before first write
               },
             },
@@ -120,7 +119,7 @@ return {
           },
           lualine_x = { 'searchcount' },
           lualine_y = { lsp, size },
-          lualine_z = { '%p%%/%L', '%l:%c' },
+          lualine_z = { '%p%%/%L', { '%l:%c', separator = { right = '' } } },
         },
         inactive_sections = {
           lualine_a = {},
