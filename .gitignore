@@ -1,4 +1,5 @@
 # Ignore Zsh history file
 zsh/.zsh_history
 tmux/plugins/
+..bfg-report/
 
