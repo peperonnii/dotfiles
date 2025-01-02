@@ -16,6 +16,7 @@ require('lazy').setup({
   require 'plugins.todo-comments',
   require 'plugins.autopairs',
   require 'plugins.indent_line',
+  -- require 'plugins.snippets-latex',
 
   -- NOTE: UI/UX
   require 'plugins.visual-whitespace',

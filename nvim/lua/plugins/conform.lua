@@ -1,5 +1,5 @@
 return {
-  { -- Autoformat
+  {
     'stevearc/conform.nvim',
     event = { 'BufWritePre' },
     cmd = { 'ConformInfo' },
@@ -16,9 +16,6 @@ return {
     opts = {
       notify_on_error = false,
       format_on_save = function(bufnr)
-        -- Disable "format_on_save lsp_fallback" for languages that don't
-        -- have a well standardized coding style. You can add additional
-        -- languages here or re-enable it for the disabled ones.
         local disable_filetypes = { c = true, cpp = true }
         local lsp_format_opt
         if disable_filetypes[vim.bo[bufnr].filetype] then
@@ -32,17 +29,34 @@ return {
         }
       end,
       formatters_by_ft = {
-        lua = { 'stylua' },
-        cpp = { 'clang_format' },
-        -- Conform can also run multiple formatters sequentially
-        python = { 'isort', 'black' },
-        --
-        -- You can use 'stop_after_first' to run the first available formatter from the list
-        javascript = { 'prettierd', 'prettier', stop_after_first = true },
-        html = { 'prettierd', 'prettier', stop_after_first = true },
-        css = { 'prettierd', 'prettier', stop_after_first = true },
+        cpp = {
+          'clang_format',
+          stop_after_first = true,
+        },
+        lua = {
+          'stylua',
+          stop_after_first = true,
+        },
+        python = {
+          'isort',
+          'black',
+          stop_after_first = true,
+        },
+        javascript = {
+          'prettierd',
+          'prettier',
+          stop_after_first = true,
+        },
+      },
+      formatters = {
+        clang_format = {
+          cmd = 'clang-format',
+          args = {
+            '--style={BasedOnStyle: Google, IndentWidth: 2, TabWidth: 2, UseTab: Never}',
+          },
+          stdin = true,
+        },
       },
     },
   },
 }
--- vim: ts=2 sts=2 sw=2 et

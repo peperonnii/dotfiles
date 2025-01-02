@@ -3,6 +3,8 @@ for file in ~/.config/zsh/*.zsh; do
 done
 unset file
 
+bindkey '^Y' autosuggest-accept
+
 # hides the % symbol 
 PROMPT_EOL_MARK=''
 unsetopt PROMPT_SP

@@ -161,7 +161,6 @@ return {
         html = {},
         vuels = {},
         marksman = {},
-
         -- tailwindcss = {
         --   filetypes = { html },
         -- },
@@ -180,21 +179,17 @@ return {
           -- filetypes = { ...},
           -- capabilities = {},
         },
-        -- rust_analyzer = {},
+        rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
-        --
         -- NOTE Some languages (like typescript) have entire language plugins that can be useful:
         --    https://github.com/pmizio/typescript-tools.nvim
-        --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
       }
-
       -- Ensure the servers and tools above are installed
       --  To check the current status of installed tools and/or manually install
       --  other tools, you can run
       --    :Mason
-      --
       --  You can press `g?` for help in this menu.
       require('mason').setup()
       local ensure_installed = vim.tbl_keys(servers or {})
