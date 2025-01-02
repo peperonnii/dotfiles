@@ -1,1 +1,0 @@
-baebb49b6c821a91a7fa2d300db5e52836e6dc89 21390 .zsh_history
