@@ -1,0 +1,6 @@
+# Ignore Zsh history file
+.config/zsh/.zsh_history
+.config/zsh/.zcompdump 
+.config/tmux/plugins/*/.git
+.config/tmux/plugins/*
+
