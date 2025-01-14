@@ -28,7 +28,7 @@ class Bar(Window):
             v_align="fill",
             orientation="v",
             spacing=10,
-            buttons=[WorkspaceButton(id=i, label="") for i in range(1, 11)],
+            buttons=[WorkspaceButton(id=i, label=f"{i}") for i in range(1, 11)],
         )
         self.date_time = DateTime(
             name="date-time",
@@ -37,10 +37,17 @@ class Bar(Window):
             v_align="center"
         )
 
+        # self.corners = CenterBox(
+        #     name="corners",
+        #     orientation="v",
+        # )
+        # self.corners_top = Corner(name="corner", orientation="top-left", size=30, h_expand=False)
+        # self.corners_bot = Corner(name="corner", orientation="bottom-left", size=30)
 
+        # self.center_box.add_start(self.corners_top)
         self.center_box.add_start(self.date_time)
         self.center_box.add_center(self.workspaces)
-
+        # self.center_box.add_end(self.corners_bot)
 
         self.full_box = Box(
             name= "full-box",
@@ -49,7 +56,5 @@ class Bar(Window):
             children=[
                 self.center_box,
             ]
-
         )
-
         self.add(self.full_box)
