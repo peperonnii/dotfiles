@@ -1,10 +1,11 @@
 from fabric.hyprland.widgets import WorkspaceButton, Workspaces
 from fabric.widgets.box import Box
 from fabric.widgets.centerbox import CenterBox
+from fabric.widgets.circularprogressbar import CircularProgressBar
 from fabric.widgets.datetime import DateTime
-from fabric.widgets.shapes.corner import Corner
 from fabric.widgets.wayland import \
     WaylandWindow as Window  # Replace the previous Window import with this
+from modules.systemtray import SystemTray
 
 
 class Bar(Window):
@@ -27,7 +28,7 @@ class Bar(Window):
             empty_scroll=True,
             v_align="fill",
             orientation="v",
-            spacing=10,
+            spacing=0,
             buttons=[WorkspaceButton(id=i, label=f"{i}") for i in range(1, 11)],
         )
         self.date_time = DateTime(
@@ -37,17 +38,18 @@ class Bar(Window):
             v_align="center"
         )
 
-        # self.corners = CenterBox(
-        #     name="corners",
-        #     orientation="v",
-        # )
-        # self.corners_top = Corner(name="corner", orientation="top-left", size=30, h_expand=False)
-        # self.corners_bot = Corner(name="corner", orientation="bottom-left", size=30)
+        self.performance = CircularProgressBar(
+            name="performance",
+            min_value=0.0,
+            max_value=1.0,
+        )
 
-        # self.center_box.add_start(self.corners_top)
+        self.systemtray = SystemTray()
+
+
         self.center_box.add_start(self.date_time)
         self.center_box.add_center(self.workspaces)
-        # self.center_box.add_end(self.corners_bot)
+        self.center_box.add_end(self.systemtray)
 
         self.full_box = Box(
             name= "full-box",

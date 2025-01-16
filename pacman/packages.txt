@@ -132,6 +132,7 @@ python-libtmux
 python-loguru
 python-pip
 python-pylspci
+python-utils
 qemu-base
 qemu-desktop
 qt5-quickcontrols-nemo

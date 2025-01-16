@@ -1,0 +1,87 @@
+#date-time {
+  color: #E2E2E2;
+  background-color: #1B1B1B;
+  border-radius: 30px 8px 15px 15px;
+  margin-top: 8px;
+  padding: 8px;
+}
+
+#bar {
+  min-width: 40px;
+  border-radius: 32px 0 0 32px;
+  background-color: #121212;
+}
+
+#system-tray {
+  background-color: #121212;
+  /*border: 2px solid mix(@foreground, @background, 0.9);*/
+  border-right: none;
+  border-radius: 20px;
+  padding: 8px 0;
+}
+
+#corners {
+  background-color: transparent;
+}
+
+#tl {
+  background-color: #121212;
+}
+
+#tr {
+  background-color: #000000;
+}
+
+#bl {
+  background-color: #121212;
+}
+
+#br {
+  background-color: #000000;
+}
+
+#workspaces {
+  border-radius: 20px;
+  margin: 6px;
+  padding: 4px;
+  /*border: 2px solid mix(@foreground, @background, 0.9);*/
+  border-right: none;
+  /*padding-right: 14px;*/
+  background-color: #1B1B1B;
+}
+
+#workspaces > button {
+  border-radius: 999px;
+  margin: 0;
+  padding: 0;
+  min-height: 30px;
+  min-width: 30px;
+}
+
+#workspaces > button > label {
+  font-size: 0.95rem;
+  color: #E2E2E2;
+}
+
+#workspaces > button.active {
+  background-color: #E2E2E2;
+  color: #1B1B1B;
+  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+#workspaces > button.active > label {
+  color: #1B1B1B;
+  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+#workspaces > button.empty > label {
+  color: rgba(226, 226, 226, 0.4);
+}
+
+#workspaces > button.empty {
+  background-color: #1B1B1B;
+}
+
+#workspaces > button:hover {
+  background-color: green;
+}

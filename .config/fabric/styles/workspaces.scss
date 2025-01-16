@@ -1,0 +1,49 @@
+@use "colors.scss";
+
+#workspaces {
+    border-radius: 20px;
+    margin: 6px;
+    padding: 4px;
+    /*border: 2px solid mix(@foreground, @background, 0.9);*/
+    border-right: none;
+    /*padding-right: 14px;*/
+    background-color: colors.$foreground;
+}
+
+#workspaces>button {
+    //     border: 2px solid colors.$foreground;
+    border-radius: 999px;
+    margin: 0;
+    padding: 0;
+    min-height: 30px;
+    min-width: 30px;
+    //     /*transition: all 0.5s cubic-bezier(.5, .25, .25, 1);*/
+}
+
+#workspaces>button>label {
+    font-size: 0.95rem;
+    color: colors.$text;
+}
+
+#workspaces>button.active {
+    background-color: colors.$text;
+    color: colors.$foreground;
+    transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+#workspaces>button.active>label {
+    color: colors.$foreground;
+    transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+#workspaces>button.empty>label {
+    color: rgba(colors.$text, 0.4);
+}
+
+#workspaces>button.empty {
+    background-color: colors.$foreground;
+}
+
+#workspaces>button:hover {
+    background-color: colors.$color1;
+}

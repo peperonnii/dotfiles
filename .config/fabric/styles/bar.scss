@@ -1,0 +1,23 @@
+@use "colors";
+
+#date-time {
+    color: colors.$text;
+    background-color: colors.$foreground; // Updated
+    border-radius: 30px 8px 15px 15px;
+    margin-top: 8px;
+    padding: 8px;
+}
+
+#bar {
+    min-width: 40px;
+    border-radius: 32px 0 0 32px;
+    background-color: colors.$background;
+}
+
+#system-tray {
+    background-color: colors.$background;
+    /*border: 2px solid mix(@foreground, @background, 0.9);*/
+    border-right: none;
+    border-radius: 20px;
+    padding: 8px 0;
+}

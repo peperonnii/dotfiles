@@ -1,0 +1,22 @@
+@use "colors.scss";
+
+#corners {
+    background-color: transparent;
+}
+
+
+#tl {
+    background-color: colors.$background;
+}
+
+#tr {
+    background-color: #000000;
+}
+
+#bl {
+    background-color: colors.$background;
+}
+
+#br {
+    background-color: #000000;
+}

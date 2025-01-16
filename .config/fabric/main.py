@@ -1,3 +1,6 @@
+import logging
+import subprocess
+
 import setproctitle
 
 from fabric import Application
@@ -9,6 +12,14 @@ if __name__ == "__main__":
     setproctitle.setproctitle("pEp-shell")
     corner = Corners()
     bar = Bar()
-    app = Application("bar", bar, corner)
-    app.set_stylesheet_from_file(get_relative_path("main.sass"))
+    app = Application("bar", 
+        bar,
+        corner
+    )
+    subprocess.run(["sass","main.scss","compiled.css","--no-source-map"])
+    logging.info("SCSS stylesheets have succesfully compiled!")
+    app.set_stylesheet_from_file(get_relative_path("compiled.css"))
     app.run()
+
+
+
