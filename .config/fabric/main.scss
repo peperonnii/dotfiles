@@ -1,3 +1,7 @@
 @use "styles/bar";
 @use "styles/corners";
 @use "styles/workspaces";
+
+#tray {
+  border: 2px solid red;
+}

@@ -1,11 +1,14 @@
 from fabric.hyprland.widgets import WorkspaceButton, Workspaces
+from fabric.system_tray.widgets import SystemTray
 from fabric.widgets.box import Box
+from fabric.widgets.button import Button
 from fabric.widgets.centerbox import CenterBox
 from fabric.widgets.circularprogressbar import CircularProgressBar
 from fabric.widgets.datetime import DateTime
+from fabric.widgets.eventbox import EventBox
+from fabric.widgets.revealer import Revealer
 from fabric.widgets.wayland import \
     WaylandWindow as Window  # Replace the previous Window import with this
-from modules.systemtray import SystemTray
 
 
 class Bar(Window):
@@ -15,7 +18,7 @@ class Bar(Window):
             layer="top",
             anchor="left top bottom",
             exclusivity="auto",
-            visible=False,
+            visible=True,
             all_visible=True,
             **kwargs
         )
@@ -38,21 +41,15 @@ class Bar(Window):
             v_align="center"
         )
 
-        self.performance = CircularProgressBar(
-            name="performance",
-            min_value=0.0,
-            max_value=1.0,
+        self.system_tray = Button(
+            label="t"
         )
-
-        self.systemtray = SystemTray()
-
 
         self.center_box.add_start(self.date_time)
         self.center_box.add_center(self.workspaces)
-        self.center_box.add_end(self.systemtray)
-
+        self.center_box.add_end(self.system_tray)
         self.full_box = Box(
-            name= "full-box",
+            name="full-box",
             orientation="h",
             h_expand=False,
             children=[
@@ -60,3 +57,10 @@ class Bar(Window):
             ]
         )
         self.add(self.full_box)
+
+    def toggle_tray(self, button: Button):
+        if self.system_tray:
+            print("what this works?")
+
+        
+

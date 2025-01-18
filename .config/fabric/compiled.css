@@ -85,3 +85,7 @@
 #workspaces > button:hover {
   background-color: green;
 }
+
+#tray {
+  border: 2px solid red;
+}
