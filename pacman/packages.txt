@@ -126,6 +126,7 @@ polychromatic
 proton-vpn-gtk-app
 protontricks
 protonvpn-cli-community
+python-cairosvg
 python-dataclasses-json
 python-fabric-git
 python-libtmux

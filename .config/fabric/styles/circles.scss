@@ -1,0 +1,16 @@
+@use "colors";
+
+#resource-container {
+    border-radius: 20px 20px 30px 30px;
+    margin-top: 5px;
+    padding: 3px;
+    background-color: colors.$foreground;
+}
+
+#cpu-progress-bar,
+#ram-progress-bar,
+#swap-progress-bar {
+    background-color: colors.$background;
+    color: rgba($color: colors.$text, $alpha: 0.15);
+    border: solid 1px rgba($color: colors.$text, $alpha: 0.75);
+}

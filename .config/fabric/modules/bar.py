@@ -9,6 +9,7 @@ from fabric.widgets.eventbox import EventBox
 from fabric.widgets.revealer import Revealer
 from fabric.widgets.wayland import \
     WaylandWindow as Window  # Replace the previous Window import with this
+from modules.circles import Resources
 
 
 class Bar(Window):
@@ -34,6 +35,7 @@ class Bar(Window):
             spacing=0,
             buttons=[WorkspaceButton(id=i, label=f"{i}") for i in range(1, 11)],
         )
+
         self.date_time = DateTime(
             name="date-time",
             formatters="%H\n%M\n  •\n%d\n%m",
@@ -41,11 +43,20 @@ class Bar(Window):
             v_align="center"
         )
 
-        self.system_tray = Button(
-            label="t"
+
+
+        self.system_tray = SystemTray()
+        self.system_tray_button = EventBox(
+            events="button-press",
+            name="tray-button",
+            child=Revealer(
+                child=self.system_tray
+            )
         )
+        # self.system_tray_button.connect("button-press", self.toggle_tray)
 
         self.center_box.add_start(self.date_time)
+        self.center_box.add_start(Resources())
         self.center_box.add_center(self.workspaces)
         self.center_box.add_end(self.system_tray)
         self.full_box = Box(
@@ -59,8 +70,7 @@ class Bar(Window):
         self.add(self.full_box)
 
     def toggle_tray(self, button: Button):
-        if self.system_tray:
-            print("what this works?")
-
+        print("what the frigma")
         
+
 
