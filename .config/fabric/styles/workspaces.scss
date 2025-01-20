@@ -45,5 +45,5 @@
 }
 
 #workspaces>button:hover {
-    background-color: colors.$color1;
+    background-color: rgba($color: colors.$text, $alpha: 0.2);
 }

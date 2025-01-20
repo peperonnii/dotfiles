@@ -1,20 +1,19 @@
 from typing import cast
 
-from fabric import Application
-from fabric.widgets.box import Box
-from fabric.widgets.label import Label
-from fabric.widgets.image import Image
-from fabric.widgets.button import Button
-from fabric.widgets.wayland import WaylandWindow
-from fabric.notifications import Notifications, Notification
-from fabric.utils import invoke_repeater, get_relative_path
-
 from gi.repository import GdkPixbuf
 
+from fabric import Application
+from fabric.notifications import Notification, Notifications
+from fabric.utils import get_relative_path, invoke_repeater
+from fabric.widgets.box import Box
+from fabric.widgets.button import Button
+from fabric.widgets.image import Image
+from fabric.widgets.label import Label
+from fabric.widgets.wayland import WaylandWindow
 
-NOTIFICATION_WIDTH = 360
+NOTIFICATION_WIDTH = 400
 NOTIFICATION_IMAGE_SIZE = 64
-NOTIFICATION_TIMEOUT = 10 * 1000  # 10 seconds
+NOTIFICATION_TIMEOUT = 10 * 500  # 10 seconds
 
 
 class NotificationWidget(Box):
@@ -135,7 +134,7 @@ if __name__ == "__main__":
         "notifications",
         WaylandWindow(
             margin="8px 8px 8px 8px",
-            anchor="top right",
+            anchor="top left",
             child=Box(
                 size=2,  # so it's not ignored by the compositor
                 spacing=4,

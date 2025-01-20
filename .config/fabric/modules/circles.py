@@ -32,6 +32,19 @@ class Resources(Box):
                 )
             ]
         )
+        # self.cpu_temp_progress_bar = CircularProgressBar(
+        #     name="cpu-temp-progress-bar", pie=False, size=34, line_width=3
+        # )
+        # self.cpu_temp_container = Overlay(
+        #     child=self.cpu_temp_progress_bar,
+        #     overlays=[
+        #         Image(
+        #             name="cpu-temp-png",
+        #             image_file="/home/joebiden/.config/fabric/icons/temp.svg",
+        #             size=18
+        #         )
+        #     ]
+        # )
 
         self.ram_progress_bar = CircularProgressBar(
             name="ram-progress-bar", pie=False, size=34, line_width=3
@@ -61,6 +74,7 @@ class Resources(Box):
         )
 
         self.add(self.cpu_container)
+        # self.add(self.cpu_temp_container)
         self.add(self.ram_container)
         self.add(self.swap_container)
 

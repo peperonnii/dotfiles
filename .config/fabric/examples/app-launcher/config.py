@@ -11,15 +11,17 @@ make the configuration way more faster than it's supposed to be
 
 import operator
 from collections.abc import Iterator
+
 from fabric import Application
+from fabric.utils import (DesktopApp, get_desktop_applications, idle_add,
+                          remove_handler)
 from fabric.widgets.box import Box
-from fabric.widgets.label import Label
 from fabric.widgets.button import Button
-from fabric.widgets.image import Image
 from fabric.widgets.entry import Entry
+from fabric.widgets.image import Image
+from fabric.widgets.label import Label
 from fabric.widgets.scrolledwindow import ScrolledWindow
 from fabric.widgets.wayland import WaylandWindow as Window
-from fabric.utils import DesktopApp, get_desktop_applications, idle_add, remove_handler
 
 
 class AppLauncher(Window):
@@ -43,8 +45,8 @@ class AppLauncher(Window):
             notify_text=lambda entry, *_: self.arrange_viewport(entry.get_text()),
         )
         self.scrolled_window = ScrolledWindow(
-            min_content_size=(280, 320),
-            max_content_size=(280 * 2, 320),
+            # min_content_size=(280, 320),
+            # max_content_size=(280 * 2, 320),
             child=self.viewport,
         )
 

@@ -59,5 +59,4 @@ class Corners(Window):
         )
 
         self.add(self.all_corners)
-
         self.show_all()

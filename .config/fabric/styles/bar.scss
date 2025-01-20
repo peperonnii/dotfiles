@@ -13,11 +13,3 @@
     border-radius: 32px 0 0 32px;
     background-color: colors.$background;
 }
-
-#system-tray {
-    background-color: colors.$background;
-    /*border: 2px solid mix(@foreground, @background, 0.9);*/
-    border-right: none;
-    border-radius: 20px;
-    padding: 8px 0;
-}

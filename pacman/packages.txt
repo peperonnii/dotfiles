@@ -45,6 +45,7 @@ gamemode
 gimp
 git
 github-cli
+glaze
 gnome-calculator
 gnome-clocks
 gnome-font-viewer

@@ -7,12 +7,14 @@ from fabric import Application
 from fabric.utils import get_relative_path
 from modules.bar import Bar
 from modules.corners import Corners
+from modules.sidebar import SideBar
 
 if __name__ == "__main__":
     setproctitle.setproctitle("pEp-shell")
     corner = Corners()
     bar = Bar()
     app = Application("bar", 
+        # sidebar,
         bar,
         corner
     )

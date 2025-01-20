@@ -1,0 +1,18 @@
+@use "colors";
+
+#tray-container {
+    margin-bottom: 8px;
+
+    #tray-button {
+        padding: 2px;
+        border-radius: 30px;
+
+    }
+
+    #tray {
+        background-color: transparent;
+        border-radius: 999px;
+
+    }
+
+}

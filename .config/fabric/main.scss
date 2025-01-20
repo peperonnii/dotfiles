@@ -2,7 +2,4 @@
 @use "styles/corners";
 @use "styles/workspaces";
 @use "styles/circles";
-
-#tray {
-  border: 2px solid red;
-}
+@use "styles/systemtray";
