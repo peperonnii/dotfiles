@@ -60,7 +60,7 @@ class Resources(Box):
             ]
         )
         self.swap_progress_bar = CircularProgressBar(
-            name="swap-progress-bar", pie=False, size=34, line_width=3, min_value=0
+            name="swap-progress-bar", pie=False, size=34, line_width=3, min_value=0, line_style="butt"
         )
         self.swap_container = Overlay(
             child=self.swap_progress_bar,

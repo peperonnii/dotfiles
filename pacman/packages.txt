@@ -27,7 +27,6 @@ dooit-extras
 efibootmgr
 element-desktop
 emacs
-exodus
 expac
 eza
 fabric-cli-git
@@ -149,6 +148,7 @@ steam
 superproductivity-bin
 swtpm
 systemd-resolvconf
+telegram-desktop
 texlive-basic
 texlive-bibtexextra
 texlive-binextra

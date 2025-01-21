@@ -45,8 +45,8 @@ class AppLauncher(Window):
             notify_text=lambda entry, *_: self.arrange_viewport(entry.get_text()),
         )
         self.scrolled_window = ScrolledWindow(
-            # min_content_size=(280, 320),
-            # max_content_size=(280 * 2, 320),
+            min_content_size=(280, 320),
+            max_content_size=(280 * 2, 320),
             child=self.viewport,
         )
 
