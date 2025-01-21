@@ -1,4 +1,4 @@
-AHHH THIS IS TO MAINTAIN MY GIT STREAK ! ! ! <h1 align="center">✨ Dotfiles</h1><p align="center"><i>These are my personal configuration files,
+<h1 align="center">✨ Dotfiles</h1><p align="center"><i>These are my personal configuration files,
 also known as: <b>dotfiles</b>.</i></p>## Installation ```bash git clone https: //github.com/peperonnii/dotfiles.git && cd dotfiles && ./install.sh
 ```>[ !CAUTION]>You should know better than to run some random internet guy's script without checking it first. You can trust it to not be purposefully malicious but running it could cause **damage** if any unforeseen bugs occur. Be warned. 
  - `install.sh` automatically installs [yay](https: //github.com/Jguer/yay) and my packages for you. For a fully functional system out of the box. I try to keep the packages as minimal as possible.
