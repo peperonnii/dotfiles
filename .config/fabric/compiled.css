@@ -5,6 +5,24 @@
   margin-top: 8px;
   padding: 10px 8px 8px 8px;
 }
+#date-time #time {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+#date-time #date {
+  margin: 0;
+  padding: 0;
+  color: rgba(226, 226, 226, 0.4);
+  background-color: transparent;
+}
+
+#status {
+  margin-bottom: 8px;
+  background-color: #1B1B1B;
+  border-radius: 30px;
+  padding: 8px;
+}
 
 #bar {
   min-width: 40px;
@@ -93,9 +111,6 @@
   border: solid 1px rgba(226, 226, 226, 0.75);
 }
 
-#tray-container {
-  margin-bottom: 8px;
-}
 #tray-container #tray-button {
   padding: 2px;
   border-radius: 30px;

@@ -1,11 +1,32 @@
 @use "colors";
 
+
 #date-time {
     color: colors.$text;
     background-color: colors.$foreground; // Updated
     border-radius: 30px 8px 15px 15px;
     margin-top: 8px;
     padding: 10px 8px 8px 8px;
+
+    #time {
+        margin: 0;
+        padding: 0;
+        background-color: transparent;
+    }
+
+    #date {
+        margin: 0;
+        padding: 0;
+        color: rgba($color: colors.$text, $alpha: 0.4);
+        background-color: transparent;
+    }
+}
+
+#status {
+    margin-bottom: 8px;
+    background-color: colors.$foreground;
+    border-radius: 30px;
+    padding: 8px;
 }
 
 #bar {
