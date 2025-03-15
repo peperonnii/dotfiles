@@ -8,7 +8,7 @@ require('lazy').setup({
   -- NOTE: TOOLS
   require 'plugins.vim-sleuth',
   require 'plugins.nvim-surround',
-  require 'plugins.auto-session',
+  -- require 'plugins.auto-session', -- never worked on startup
   require 'plugins.colorizer',
   require 'plugins.toggle-bool',
   require 'plugins.which-key',

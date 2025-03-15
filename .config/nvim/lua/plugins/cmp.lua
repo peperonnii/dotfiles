@@ -21,11 +21,14 @@ return {
           },
         },
         config = function()
-          require('luasnip.loaders.from_lua').lazy_load { paths = '~/.config/nvim/lua/snippets/' }
-          require('luasnip').config.set_config { -- Setting LuaSnip config
-            -- Enable autotriggered snippets
+          require('luasnip.loaders.from_lua').lazy_load {
+            paths = {
+              vim.fn.expand '~/.config/nvim/lua/snippets/',
+              vim.fn.expand '~/.config/nvim/lua/snippets/tex/',
+            },
+          }
+          require('luasnip').config.set_config {
             enable_autosnippets = true,
-            -- Use Tab (or some other key if you prefer) to trigger visual selection
             store_selection_keys = '<Tab>',
           }
         end,
@@ -41,6 +44,7 @@ return {
       local cmp = require 'cmp'
       local luasnip = require 'luasnip'
       luasnip.config.setup {}
+
       cmp.setup {
         snippet = {
           expand = function(args)
@@ -53,20 +57,12 @@ return {
           documentation = cmp.config.window.bordered(),
           col_offset = -3,
         },
-        mapping = cmp.mapping.preset.insert { --`:help ins-completion`
+        mapping = cmp.mapping.preset.insert {
           ['<C-n>'] = cmp.mapping.select_next_item(),
           ['<C-p>'] = cmp.mapping.select_prev_item(),
-          -- Scroll the documentation window [b]ack / [f]orward
           ['<C-b>'] = cmp.mapping.scroll_docs(-4),
           ['<C-f>'] = cmp.mapping.scroll_docs(4),
-          -- Accept ([y]es) the completion.
-          --  This will auto-import if your LSP supports it.
-          --  This will expand snippets if the LSP sent a snippet.
           ['<C-Space>'] = cmp.mapping.confirm { select = true },
-          -- Manually trigger a completion from nvim-cmp.
-          --  Generally you don't need this, because nvim-cmp will display
-          --  completions whenever it has completion options available.
-          -- ['<C-Space>'] = cmp.mapping.complete {},
           ['<c-l>'] = cmp.mapping(function()
             if luasnip.expand_or_locally_jumpable() then
               luasnip.expand_or_jump()
@@ -78,19 +74,17 @@ return {
             end
           end, { 'i', 's' }),
         },
-        sources = {
-          {
-            name = 'lazydev',
-            group_index = 0,
-          },
+        sources = cmp.config.sources({
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
-          { name = 'path' },
-        },
+          { name = 'path' }, -- ✅ Enable path completion in buffers
+        }, {
+          { name = 'buffer' },
+        }),
         formatting = {
           format = function(entry, vim_item)
             if vim.tbl_contains({ 'path' }, entry.source.name) then
-              local icon, hl_group = require('nvim-web-devicons').get_icon(entry.completion_item().label)
+              local icon, hl_group = require('nvim-web-devicons').get_icon(entry.completion_item.label) -- ✅ FIXED
               if icon then
                 vim_item.kind = icon
                 vim_item.kind_hl_group = hl_group
@@ -101,12 +95,8 @@ return {
           end,
         },
       }
-      cmp.setup.cmdline({ '/', '?' }, {
-        mapping = cmp.mapping.preset.cmdline(),
-        sources = {
-          { name = 'buffer' },
-        },
-      })
+
+      -- ✅ Enable path completion in `:` command mode
       cmp.setup.cmdline(':', {
         mapping = cmp.mapping.preset.cmdline(),
         sources = cmp.config.sources({
@@ -114,9 +104,17 @@ return {
         }, {
           { name = 'cmdline' },
         }),
-        matching = { disallow_symbol_nonprefix_matching = false },
+      })
+
+      -- ✅ Enable path completion when typing `/` in normal mode
+      cmp.setup.cmdline({ '/', '?' }, {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+          { name = 'path' }, -- ✅ Path completion for `/`
+        }, {
+          { name = 'buffer' },
+        }),
       })
     end,
   },
 }
--- vim: ts=2 sts=2 sw=2 et

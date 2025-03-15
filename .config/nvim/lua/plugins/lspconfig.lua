@@ -156,7 +156,7 @@ return {
       local servers = {
         clangd = {},
         pyright = {},
-        cssls = { filetypes = { css, scss, sass } },
+        cssls = { filetypes = { 'css', 'scss', 'sass' } },
         ts_ls = {},
         html = {},
         vuels = {},

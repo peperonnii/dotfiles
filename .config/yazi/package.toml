@@ -1,5 +1,12 @@
-[plugin]
-deps = [{ use = "yazi-rs/plugins:full-border", rev = "4f1d0ae" }, { use = "h-hg/yamb", rev = "0598b8d" }]
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "4f1d0ae"
+hash = "3a73613fc702a5f8369791b3401f52f1"
+
+[[plugin.deps]]
+use = "h-hg/yamb"
+rev = "0598b8d"
+hash = "6c12d0b652513b8990f9756b042fb8f8"
 
 [flavor]
 deps = []
