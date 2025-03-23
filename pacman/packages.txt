@@ -17,7 +17,6 @@ btop-git
 btrfs-progs
 cava
 chromium
-code
 copyq
 corectrl
 croc
@@ -30,7 +29,6 @@ efibootmgr
 egl-wayland
 electron30-bin
 element-desktop
-emacs
 expac
 eza
 fabric-cli-git
@@ -67,19 +65,14 @@ hyprpicker
 hyprshade
 illogical-impulse-ags
 illogical-impulse-ags-debug
-illogical-impulse-audio
-illogical-impulse-backlight
 illogical-impulse-basic
 illogical-impulse-bibata-modern-classic-bin
-illogical-impulse-fonts-themes
-illogical-impulse-gnome
 illogical-impulse-gtk
 illogical-impulse-microtex-git
 illogical-impulse-microtex-git-debug
 illogical-impulse-oneui4-icons-git
 illogical-impulse-pymyc-aur
 illogical-impulse-python
-illogical-impulse-screencapture
 imv
 inetutils
 inotify-tools
@@ -89,7 +82,6 @@ kamera
 kdeconnect
 kdenlive
 keyguard
-kitty
 latex-mk
 lib32-gnutls
 lib32-mangohud
@@ -107,6 +99,7 @@ logseq-desktop
 lorien-bin
 luarocks
 lutris
+lxappearance
 man-db
 mangohud
 mato-icons-git
@@ -152,9 +145,11 @@ qemu-base
 qemu-desktop
 qt5-quickcontrols-nemo
 reflector
+sassc
 signal-desktop
 smassh-bin
 spicetify-cli-git
+spotify-launcher
 steam
 swtpm
 systemd-resolvconf
@@ -192,7 +187,6 @@ vi
 viper-bin
 virt-manager
 virt-viewer
-vulkan-radeon
 vulkan-tools
 wine
 wine-mono
@@ -203,7 +197,6 @@ wtype
 xdg-desktop-portal-hyprland
 xournalpp
 yay
-yay-bin-debug
 yazi
 z
 zathura
